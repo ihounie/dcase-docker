@@ -21,5 +21,5 @@ RUN pip3 install DCASE-models
 # (Optional) install Jupiter notebooks to run examples
 RUN pip3 install notebook
 
-ENTRYPOINT [ "/bin/bash"]
+ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
