@@ -20,6 +20,8 @@ RUN pip3 install "tensorflow-gpu<1.14"
 RUN pip3 install DCASE-models
 # (Optional) install Jupiter notebooks to run examples
 RUN pip3 install notebook
+# Install ffmpeg
+RUN apt install ffmpeg
 
 ENTRYPOINT [ "/bin/bash"]
 CMD [ "/bin/bash" ]
