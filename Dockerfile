@@ -13,7 +13,7 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-RUN apt-get install -y libsndfile1 libsox-fmt-all sox
+RUN apt-get install -y libsndfile1 libsox-fmt-all sox ffmpeg
 # Install Tensorflow with GPU support
 RUN pip3 install "tensorflow-gpu<1.14"
 # Install DCASE-models library
