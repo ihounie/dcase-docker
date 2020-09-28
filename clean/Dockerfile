@@ -19,6 +19,7 @@ RUN pip3 install "tensorflow-gpu<1.14"
 # (Optional) install Jupiter notebooks to run examples
 RUN pip3 install notebook
 RUN pip3 install papermill
+RUN pip3 install comet_ml
 
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
