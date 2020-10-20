@@ -20,6 +20,6 @@ RUN pip3 install "tensorflow-gpu<1.14"
 RUN pip3 install notebook
 RUN pip3 install papermill
 RUN pip3 install comet_ml
-RUN pip3 install DCASE-models[visualization]
+#RUN pip3 install DCASE-models[visualization]
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
