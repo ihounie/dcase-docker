@@ -21,7 +21,7 @@ RUN pip3 install DCASE-models
 # (Optional) install Jupiter notebooks to run examples
 RUN pip3 install notebook
 # Install ffmpeg
-RUN apt install ffmpeg
+RUN apt-get install -y ffmpeg
 RUN pip3 install scaper
 
 ENTRYPOINT [ "/bin/bash"]
