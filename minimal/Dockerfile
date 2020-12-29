@@ -16,8 +16,6 @@ ENV LC_ALL en_US.UTF-8
 RUN apt-get install -y libsndfile1 libsox-fmt-all libsox-dev sox
 # Install Tensorflow with GPU support
 RUN pip3 install "tensorflow-gpu<1.14"
-# Install DCASE-models library
-RUN pip3 install DCASE-models
 # (Optional) install Jupiter notebooks to run examples
 RUN pip3 install notebook
 # Install ffmpeg
