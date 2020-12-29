@@ -22,7 +22,8 @@ RUN pip3 install DCASE-models
 RUN pip3 install notebook
 # Install ffmpeg
 RUN apt-get install -y ffmpeg
-RUN pip3 install scaper
+# Install some additional utilities
+RUN pip3 install scaper papermill comet_ml
 
 ENTRYPOINT [ "/bin/bash"]
 CMD [ "/bin/bash" ]
