@@ -13,9 +13,13 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-RUN apt-get install -y libsndfile1 libsox-fmt-all libsox-dev sox
+RUN apt-get install -y libsndfile1 libsox-fmt-all libsox-dev sox git
 # Install Tensorflow with GPU support
 RUN pip3 install "tensorflow-gpu<1.14"
+# Install library from official repo
+RUN git clone https://github.com/MTG/DCASE-models.git &$ cd DCASE-models && pip3 install .
+# Keep dependencies only
+RUN pip3 uninstall DCASE-models
 # (Optional) install Jupiter notebooks to run examples
 RUN pip3 install notebook
 # Install ffmpeg
