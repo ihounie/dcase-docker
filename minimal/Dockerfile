@@ -1,5 +1,5 @@
 # Use nvidia docker image as base image
-FROM nvidia/cuda:10.1-cudnn7-runtime
+FROM nvidia/cuda:10.0-cudnn7-runtime
 # Declare some ARGuments
 ARG PYTHON_VERSION=3.6
 # Installation of some libraries / RUN some commands on the base image
