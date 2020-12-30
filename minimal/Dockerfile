@@ -21,7 +21,7 @@ RUN pip3 install notebook
 # Install ffmpeg
 RUN apt-get install -y ffmpeg
 # Install some additional utilities
-RUN pip3 install scaper papermill comet_ml
+RUN pip3 install scaper papermill comet_ml pandas
 
 ENTRYPOINT [ "/bin/bash"]
 CMD [ "/bin/bash" ]
