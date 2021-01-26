@@ -25,7 +25,7 @@ RUN pip3 install wget
 RUN apt-get install -y llvm-10
 ENV LLVM_CONFIG /usr/bin/llvm-config-10
 RUN pip3 install Cython librosa
-RUN seaborn
+RUN pip3 install seaborn
 ENV MAVD_PATH ../../dataset/MAVD
 ENTRYPOINT [ "/bin/bash", "-l", "-c"]
 CMD [ "/bin/bash" , "-l", "-c"]
