@@ -28,5 +28,5 @@ RUN pip3 install Cython librosa
 RUN pip3 install seaborn
 RUN pip3 install sox
 ENV MAVD_PATH ../../dataset/MAVD
-ENTRYPOINT [ "/bin/bash", "-l", "-c"]
-CMD [ "/bin/bash" , "-l", "-c"]
+ENTRYPOINT cd experiments/soundscape_synthesis/ && synth_soundscapes.sh
+#CMD [ "/bin/bash" , "-l", "-c"]
