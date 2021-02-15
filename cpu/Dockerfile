@@ -26,5 +26,6 @@ RUN apt-get install -y llvm-10
 ENV LLVM_CONFIG /usr/bin/llvm-config-10
 RUN pip3 install Cython
 RUN pip3 install dcase_models
+RUN pip3 install 'h5py<3.0.0'
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
