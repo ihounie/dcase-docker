@@ -29,6 +29,6 @@ RUN pip3 install dcase_models
 RUN pip3 install 'h5py<3.0.0'
 RUN pip3 install --upgrade && pip3 install scikit-build
 RUN pip3 install --upgrade pip setuptools wheel
-RUN apt-get install -y python3-opencv
+RUN pip3 install opencv-python
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
