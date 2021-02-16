@@ -27,5 +27,6 @@ ENV LLVM_CONFIG /usr/bin/llvm-config-10
 RUN pip3 install Cython
 RUN pip3 install dcase_models
 RUN pip3 install 'h5py<3.0.0'
+RUN pip3 install --upgrade && pip3 install scikit-build && pip3 install opencv-python
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
