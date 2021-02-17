@@ -33,5 +33,6 @@ RUN set -x \
  && rm -f /ngrok.zip \
     # Create non-root user.
  && adduser -h /home/ngrok -D -u 6737 ngrok
+RUN pip3 install 'h5py<3.0.0'
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
