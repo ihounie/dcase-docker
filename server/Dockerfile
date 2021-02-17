@@ -36,5 +36,6 @@ RUN set -x \
 RUN pip3 install 'h5py<3.0.0'
 RUN pip3 install --upgrade plotly && pip3 install -U kaleido
 RUN apt-get install -y curl
+RUN apt-get install -y jq
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
