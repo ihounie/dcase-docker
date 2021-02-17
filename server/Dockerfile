@@ -35,5 +35,6 @@ RUN set -x \
  && adduser -h /home/ngrok -D -u 6737 ngrok
 RUN pip3 install 'h5py<3.0.0'
 RUN pip3 install --upgrade plotly && pip3 install -U kaleido
+RUN apt-get install -y curl
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
