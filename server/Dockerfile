@@ -27,15 +27,9 @@ ENV LLVM_CONFIG /usr/bin/llvm-config-10
 RUN pip3 install Cython
 RUN pip3 install dcase_models[visualization] && pip3 uninstall -y dcase_models
 RUN pip3 install oyaml
-RUN set -x \
- && wget -O /ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip \
- && unzip -o /ngrok.zip -d /bin \
- && rm -f /ngrok.zip \
-    # Create non-root user.
- && adduser -h /home/ngrok -D -u 6737 ngrok
 RUN pip3 install 'h5py<3.0.0'
 RUN pip3 install --upgrade plotly && pip3 install -U kaleido
-RUN apt-get install -y curl
-RUN apt-get install -y jq
+RUN apt-get install -y curl jq
+RUN pip3 install pyngrok
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
