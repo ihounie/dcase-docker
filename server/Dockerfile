@@ -31,5 +31,7 @@ RUN pip3 install 'h5py<3.0.0'
 RUN pip3 install --upgrade plotly && pip3 install -U kaleido
 RUN apt-get install -y curl jq
 RUN pip3 install pyngrok
+#Running ngrok makes pyngrok download it
+RUN ngrok
 ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
 CMD [ "/bin/bash" ]
