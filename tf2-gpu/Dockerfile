@@ -1,0 +1,30 @@
+# Use nvidia docker image as base image
+FROM tensorflow/tensorflow:2.4.2-gpu
+# Declare some ARGuments
+ARG PYTHON_VERSION=3.6
+# Installation of some libraries / RUN some commands on the base image
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip python3-dev wget \
+    bzip2 libopenblas-dev pbzip2 libgl1-mesa-glx && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN apt-get clean && apt-get update && apt-get install -y locales
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+RUN apt-get install -y libsndfile1 libsox-fmt-all sox ffmpeg git
+# (Optional) install Jupiter notebooks to run examples
+RUN pip3 install notebook
+RUN pip3 install papermill
+RUN pip3 install comet_ml
+# install dependencies
+RUN pip3 install seaborn wget
+RUN apt-get install -y llvm-10
+ENV LLVM_CONFIG /usr/bin/llvm-config-10
+RUN pip3 install Cython
+RUN pip3 install numpy==1.17.4 pandas==0.25.3 SoundFile==0.10.3.post1 PyYAML==5.2 numba==0.48.0 librosa==0.7.1 openl3==0.3.1 scikit-learn==0.22.1 keras==2.2.4 autopool==0.1.0 wget==3.2 sox==1.3.7 sed_eval==0.2.1
+#RUN wget -O /tmp/ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip -o /tmp/ngrok.zip -d 
+#RUN pip3 install DCASE-models[visualization]
+ENTRYPOINT ["/bin/bash" , "-l", "-c" ]
+CMD [ "/bin/bash" ]
